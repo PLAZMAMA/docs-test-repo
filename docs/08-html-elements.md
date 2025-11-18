@@ -178,21 +178,21 @@ With background and border
 
 ## Images
 
-<img src="https://via.placeholder.com/300x150/007bff/ffffff?text=HTML+Image" alt="HTML Image">
+<img src="https://placehold.co/300x150/007bff/ffffff?text=HTML+Image" alt="HTML Image">
 
-<img src="https://via.placeholder.com/200x200" alt="Image" width="100" height="100">
+<img src="https://placehold.co/200x200" alt="Image" width="100" height="100">
 
-<img src="https://via.placeholder.com/400x200" alt="Styled" style="border: 2px solid #333; border-radius: 10px;">
+<img src="https://placehold.co/400x200" alt="Styled" style="border: 2px solid #333; border-radius: 10px;">
 
 ## Figures and Captions
 
 <figure>
-  <img src="https://via.placeholder.com/400x250/666666/ffffff?text=Figure+Example" alt="Figure">
+  <img src="https://placehold.co/400x250/666666/ffffff?text=Figure+Example" alt="Figure">
   <figcaption>This is a figure caption</figcaption>
 </figure>
 
 <figure style="text-align: center;">
-  <img src="https://via.placeholder.com/300x200/444444/ffffff?text=Centered" alt="Centered">
+  <img src="https://placehold.co/300x200/444444/ffffff?text=Centered" alt="Centered">
   <figcaption style="font-style: italic;">Centered figure with styled caption</figcaption>
 </figure>
 
