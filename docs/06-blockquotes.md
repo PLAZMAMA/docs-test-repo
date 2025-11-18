@@ -98,7 +98,7 @@ This document demonstrates various blockquote styles and special container forma
 
 > Here's an image in a blockquote:
 >
-> ![Example Image](https://via.placeholder.com/300x150/666666/ffffff?text=Blockquote+Image)
+> ![Example Image](https://placehold.co/300x150/666666/ffffff?text=Blockquote+Image)
 
 ### Blockquote with Tables
 
@@ -335,7 +335,7 @@ This is an aside element with supplementary information.
 </aside>
 
 <figure>
-  <img src="https://via.placeholder.com/300x200/444444/ffffff?text=Figure+Image" alt="Figure image">
+  <img src="https://placehold.co/300x200/444444/ffffff?text=Figure+Image" alt="Figure image">
   <figcaption>Figure caption describing the image above.</figcaption>
 </figure>
 
