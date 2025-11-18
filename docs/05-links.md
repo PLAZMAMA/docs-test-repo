@@ -125,13 +125,13 @@ Content for section 3.
 
 ### Linked Image
 
-[![Click me](https://via.placeholder.com/200x100/007bff/ffffff?text=Click+Here)](https://example.com)
+[![Click me](https://placehold.co/200x100/007bff/ffffff?text=Click+Here)](https://example.com)
 
 ### Multiple Linked Images
 
-[![Logo 1](https://via.placeholder.com/100x100/ff6600/ffffff?text=1)](https://example.com/1)
-[![Logo 2](https://via.placeholder.com/100x100/00cc66/ffffff?text=2)](https://example.com/2)
-[![Logo 3](https://via.placeholder.com/100x100/cc0066/ffffff?text=3)](https://example.com/3)
+[![Logo 1](https://placehold.co/100x100/ff6600/ffffff?text=1)](https://example.com/1)
+[![Logo 2](https://placehold.co/100x100/00cc66/ffffff?text=2)](https://example.com/2)
+[![Logo 3](https://placehold.co/100x100/cc0066/ffffff?text=3)](https://example.com/3)
 
 ## Footnote Links
 
