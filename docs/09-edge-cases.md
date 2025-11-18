@@ -1,449 +1,485 @@
-# HTML Elements in Markdown
+# Edge Cases and Stress Tests
 
-This document demonstrates the use of HTML elements within Markdown documents.
+This document contains edge cases, unusual patterns, and stress tests for markdown renderers.
 
-## Text Formatting
+## Empty Elements
 
-### Basic HTML Tags
+### Empty Headers
 
-<b>Bold text using HTML</b>
+#
 
-<i>Italic text using HTML</i>
+##
 
-<u>Underlined text</u>
+###
 
-<s>Strikethrough text using HTML</s>
+### Empty Lists
 
-<strong>Strong text</strong>
+*
+-
++
 
-<em>Emphasized text</em>
+1.
+2.
 
-<small>Small text</small>
+### Empty Table Cells
 
-<big>Big text</big>
+| A | B | C |
+|---|---|---|
+|   |   |   |
+|   | X |   |
+|   |   |   |
 
-<mark>Highlighted text</mark>
+### Empty Blockquote
 
-<del>Deleted text</del>
+>
 
-<ins>Inserted text</ins>
+### Empty Code Block
 
-### Subscript and Superscript
+```
 
-H<sub>2</sub>O is water
+```
 
-E = mc<sup>2</sup> is Einstein's equation
+## Extreme Nesting
 
-The formula is x<sup>2</sup> + y<sup>2</sup> = r<sup>2</sup>
+### Deeply Nested Lists
 
-Chemical formula: CH<sub>3</sub>COOH
+* Level 1
+  * Level 2
+    * Level 3
+      * Level 4
+        * Level 5
+          * Level 6
+            * Level 7
+              * Level 8
+                * Level 9
+                  * Level 10
 
-## Text Styling
+### Deeply Nested Blockquotes
 
-### Font and Span
+> Level 1
+> > Level 2
+> > > Level 3
+> > > > Level 4
+> > > > > Level 5
+> > > > > > Level 6
+> > > > > > > Level 7
+> > > > > > > > Level 8
 
-<font color="red">Red text</font>
+### Mixed Deep Nesting
 
-<font color="#0066cc">Blue text with hex color</font>
+> Blockquote level 1
+> * List item 1
+>   * Nested list 1
+>     > Nested blockquote
+>     > * List in blockquote
+>     >   1. Ordered in list in blockquote
+>     >      * Even deeper
 
-<font size="5">Large text</font>
+## Special Characters
 
-<span style="color: green; font-weight: bold;">Styled span element</span>
+### Markdown Special Characters
 
-<span style="background-color: yellow; padding: 5px;">Highlighted span</span>
+\\ \` \* \_ \{ \} \[ \] \( \) \# \+ \- \. \! \| \~
 
-### Text Alignment
+### Multiple Consecutive Special Characters
 
-<div align="left">This text is left-aligned</div>
+*****
 
-<div align="center">This text is center-aligned</div>
+_____
 
-<div align="right">This text is right-aligned</div>
+~~~~~
 
-<div align="justify">This text is justified. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+`````
 
-## Headings
+#####
 
-<h1>HTML H1 Heading</h1>
+### Special Characters in Content
 
-<h2>HTML H2 Heading</h2>
+Text with * asterisks * and _ underscores _ and ` backticks `.
 
-<h3>HTML H3 Heading</h3>
+Text with [brackets] and (parentheses) and {braces}.
 
-<h4>HTML H4 Heading</h4>
+### Unicode Edge Cases
 
-<h5>HTML H5 Heading</h5>
+Zero-width space:​ (between these words)
 
-<h6>HTML H6 Heading</h6>
+Right-to-left mark: ‏Text‏
 
-## Horizontal Rules
+Combining characters: e̊ å ñ
 
-<hr>
+Emoji with modifiers: 👋🏻 👋🏿 👨‍👩‍👧‍👦
 
-<hr style="border: 2px solid #000;">
+Unusual emoji: 🫠 🫥 🫡 🫢 🫣
 
-<hr style="border: 1px dashed #666;">
+## Very Long Content
 
-## Line Breaks
+### Long Line Without Breaks
 
-This line has a break<br>here.
+ThisIsAVeryLongWordThatDoesNotContainAnySpacesOrBreakingCharactersAndIsDesignedToTestHowMarkdownRenderersHandleExtremelyLongContinuousTextWithoutAnyNaturalBreakingPointsWhichMightCauseLayoutIssuesOrOverflowProblemsInSomeRenderers
 
-Multiple<br>line<br>breaks<br>in<br>sequence.
+### Long URL
 
-## Preformatted Text
+https://example.com/very/long/path/with/many/segments/that/goes/on/and/on/and/continues/for/a/very/long/time/to/test/how/renderers/handle/extremely/long/urls/that/might/overflow/their/containers?parameter1=value1&parameter2=value2&parameter3=value3&parameter4=value4
 
-<pre>
-Preformatted text
-    preserves    spaces
-        and line breaks
-            exactly as written
-</pre>
+### Extremely Long Table Row
 
-<pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd;">
-Styled preformatted text
-With background and border
-</pre>
+| A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
 
-## Code Elements
+## Ambiguous Syntax
 
-<code>inline code element</code>
+### Asterisk Ambiguity
 
-<kbd>Ctrl</kbd> + <kbd>C</kbd>
+***text***
 
-<var>variable</var>
+** text**
 
-<samp>sample output</samp>
+* *text*
 
-## Lists
+*text *
 
-### Unordered List
+### Underscore Ambiguity
 
-<ul>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
-</ul>
+___text___
 
-### Ordered List
+__ text__
 
-<ol>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
-</ol>
+_ _text_
 
-### Styled Lists
+_text _
 
-<ul style="list-style-type: square;">
-  <li>Square bullets</li>
-  <li>Another item</li>
-</ul>
+### Mixed Emphasis
 
-<ol type="A">
-  <li>Item A</li>
-  <li>Item B</li>
-  <li>Item C</li>
-</ol>
+*__text__*
 
-<ol type="I">
-  <li>Item I</li>
-  <li>Item II</li>
-  <li>Item III</li>
-</ol>
-
-### Definition List
-
-<dl>
-  <dt>HTML</dt>
-  <dd>HyperText Markup Language</dd>
-  
-  <dt>CSS</dt>
-  <dd>Cascading Style Sheets</dd>
-  
-  <dt>JavaScript</dt>
-  <dd>A programming language for the web</dd>
-</dl>
-
-## Links
-
-<a href="https://example.com">HTML link</a>
-
-<a href="https://example.com" target="_blank">Link opening in new tab</a>
-
-<a href="https://example.com" title="Example Website">Link with title</a>
-
-<a href="#top">Link to anchor</a>
-
-<a href="mailto:email@example.com">Email link</a>
-
-## Images
-
-<img src="https://placehold.co/300x150/007bff/ffffff?text=HTML+Image" alt="HTML Image">
-
-<img src="https://placehold.co/200x200" alt="Image" width="100" height="100">
-
-<img src="https://placehold.co/400x200" alt="Styled" style="border: 2px solid #333; border-radius: 10px;">
-
-## Figures and Captions
-
-<figure>
-  <img src="https://placehold.co/400x250/666666/ffffff?text=Figure+Example" alt="Figure">
-  <figcaption>This is a figure caption</figcaption>
-</figure>
-
-<figure style="text-align: center;">
-  <img src="https://placehold.co/300x200/444444/ffffff?text=Centered" alt="Centered">
-  <figcaption style="font-style: italic;">Centered figure with styled caption</figcaption>
-</figure>
-
-## Tables
-
-### Basic HTML Table
-
-<table>
-  <tr>
-    <th>Header 1</th>
-    <th>Header 2</th>
-    <th>Header 3</th>
-  </tr>
-  <tr>
-    <td>Cell 1</td>
-    <td>Cell 2</td>
-    <td>Cell 3</td>
-  </tr>
-  <tr>
-    <td>Cell 4</td>
-    <td>Cell 5</td>
-    <td>Cell 6</td>
-  </tr>
-</table>
-
-### Styled Table
-
-<table style="border-collapse: collapse; width: 100%;">
-  <tr style="background-color: #f2f2f2;">
-    <th style="border: 1px solid #ddd; padding: 8px;">Name</th>
-    <th style="border: 1px solid #ddd; padding: 8px;">Age</th>
-    <th style="border: 1px solid #ddd; padding: 8px;">City</th>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">John</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">30</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">New York</td>
-  </tr>
-  <tr style="background-color: #f9f9f9;">
-    <td style="border: 1px solid #ddd; padding: 8px;">Jane</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">25</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">Los Angeles</td>
-  </tr>
-</table>
-
-### Table with Colspan and Rowspan
-
-<table border="1">
-  <tr>
-    <th>Header 1</th>
-    <th colspan="2">Merged Header</th>
-  </tr>
-  <tr>
-    <td rowspan="2">Merged Cell</td>
-    <td>Cell 1</td>
-    <td>Cell 2</td>
-  </tr>
-  <tr>
-    <td>Cell 3</td>
-    <td>Cell 4</td>
-  </tr>
-</table>
-
-## Blockquotes
-
-<blockquote>
-  This is an HTML blockquote.
-</blockquote>
-
-<blockquote cite="https://example.com">
-  <p>Blockquote with citation.</p>
-  <footer>— Source: <cite>Example Source</cite></footer>
-</blockquote>
-
-## Divisions and Sections
-
-<div style="background-color: #e7f3ff; padding: 20px; border-left: 5px solid #2196F3;">
-  <h3>Info Box</h3>
-  <p>This is an information box created with a div.</p>
-</div>
-
-<div style="background-color: #fff3cd; padding: 20px; border-left: 5px solid #ffc107; margin-top: 20px;">
-  <h3>Warning Box</h3>
-  <p>This is a warning box with custom styling.</p>
-</div>
-
-<section style="border: 2px solid #ccc; padding: 15px; margin: 10px 0;">
-  <h3>Section Element</h3>
-  <p>Content within a section element.</p>
-</section>
-
-## Details and Summary
-
-<details>
-  <summary>Click to expand</summary>
-  <p>This content is hidden by default.</p>
-  <p>It can contain multiple paragraphs.</p>
-</details>
-
-<details open>
-  <summary>Expanded by default</summary>
-  <p>This details element is open by default.</p>
-</details>
-
-<details>
-  <summary><strong>Nested Details</strong></summary>
-  <p>Outer content</p>
-  <details>
-    <summary>Inner details</summary>
-    <p>Inner content</p>
-  </details>
-</details>
-
-## Forms
-
-<form>
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
-  
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
-  
-  <label for="message">Message:</label><br>
-  <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
-  
-  <input type="checkbox" id="agree" name="agree">
-  <label for="agree">I agree to the terms</label><br><br>
-  
-  <input type="radio" id="option1" name="options" value="1">
-  <label for="option1">Option 1</label><br>
-  <input type="radio" id="option2" name="options" value="2">
-  <label for="option2">Option 2</label><br><br>
-  
-  <select name="country" id="country">
-    <option value="usa">USA</option>
-    <option value="uk">UK</option>
-    <option value="canada">Canada</option>
-  </select><br><br>
-  
-  <button type="submit">Submit</button>
-</form>
-
-## Buttons
-
-<button>Default Button</button>
+_**text**_
 
-<button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer;">
-  Styled Button
-</button>
+**_text_**
 
-## Progress and Meter
-
-<label for="progress">Progress:</label>
-<progress id="progress" value="70" max="100">70%</progress>
-
-<label for="meter">Meter:</label>
-<meter id="meter" value="0.6">60%</meter>
-
-## Iframe
-
-<iframe src="https://example.com" width="100%" height="400" style="border: 1px solid #ccc;">
-  Your browser doesn't support iframes.
-</iframe>
-
-## Audio and Video
-
-### Audio
-
-<audio controls>
-  <source src="audio.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-### Video
-
-<video width="320" height="240" controls>
-  <source src="video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-## Canvas
-
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;">
-  Your browser does not support the canvas element.
-</canvas>
-
-## SVG
-
-<svg width="100" height="100">
-  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-</svg>
-
-<svg width="200" height="100">
-  <rect width="200" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
-</svg>
-
-## Address
-
-<address>
-  Written by <a href="mailto:webmaster@example.com">John Doe</a>.<br>
-  Visit us at:<br>
-  Example.com<br>
-  Box 564, Disneyland<br>
-  USA
-</address>
-
-## Time
-
-<p>The meeting is scheduled for <time datetime="2024-01-15T19:00">January 15, 2024 at 7:00 PM</time>.</p>
-
-<p>Published: <time datetime="2024-01-01">January 1, 2024</time></p>
-
-## Abbreviation
-
-<p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
-
-<p>Use <abbr title="HyperText Markup Language">HTML</abbr> for web pages.</p>
-
-## Comment
-
-<!-- This is an HTML comment -->
-<!-- It won't be visible in the rendered output -->
-
-<!-- 
-Multi-line
-HTML
-comment
--->
-
-## Ruby Annotation
-
-<ruby>
-  漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
-  字 <rp>(</rp><rt>ji</rt><rp>)</rp>
-</ruby>
-
-## Dialog
-
-<dialog open>
-  <p>This is a dialog element</p>
-  <button>Close</button>
-</dialog>
-
-## Mixing HTML and Markdown
-
-You can mix **Markdown** with <span style="color: red;">HTML</span>.
-
-* Markdown list item
-* <li style="color: blue;">HTML styled list item</li>
-* Another markdown item
+***bold and italic***
+
+### Code Ambiguity
+
+`code with ` backtick`
+
+``code with ` backtick``
+
+```code with ``` backticks```
+
+## Invalid or Malformed Syntax
+
+### Unclosed Elements
+
+**Bold without closing
+
+*Italic without closing
+
+[Link without closing paren](url
+
+![Image without closing](url
+
+### Mismatched Elements
+
+**Bold with italic close*
+
+*Italic with bold close**
+
+### Incorrect Nesting
+
+**Bold *italic** mixed*
+
+## Duplicate IDs
+
+### Duplicate Headers
+
+#### Same Header
+#### Same Header
+#### Same Header
+
+### Headers with Same ID
+
+#### header
+#### Header
+#### HEADER
+#### header
+
+## Whitespace Edge Cases
+
+### Leading/Trailing Whitespace
+
+**  bold with spaces  **
+
+*  italic with spaces  *
+
+`  code with spaces  `
+
+### Multiple Spaces
+
+Multiple     spaces     between     words
+
+### Tabs vs Spaces
+
+	Tab-indented line
+    Space-indented line
+	    Mixed indentation
+
+## Number Edge Cases
+
+### Lists with Unusual Numbering
+
+0. Starting at zero
+1. One
+2. Two
+
+10. Starting at ten
+11. Eleven
+12. Twelve
+
+999. Large number
+1000. Larger number
+
+### Lists with Wrong Order
+
+1. First
+5. Fifth (marked as 5)
+3. Third (marked as 3)
+
+## Link Edge Cases
+
+### Link with No URL
+
+[Text]()
+
+[Text]( )
+
+### Link with No Text
+
+[](https://example.com)
+
+[ ](https://example.com)
+
+### Nested Links (Invalid)
+
+[[Nested]](url1)(url2)
+
+### Links with Special Characters
+
+[Link with spaces](https://example.com/path with spaces)
+
+[Link<with>special](https://example.com)
+
+## Image Edge Cases
+
+### Image with No URL
+
+![Alt text]()
+
+### Image with No Alt Text
+
+![](https://placehold.co/150)
+
+### Very Long Alt Text
+
+![This is an extremely long alt text that goes on and on and continues to provide excessive description that might cause issues in some renderers especially if they try to display this text in tooltips or other constrained spaces](https://placehold.co/150)
+
+## Code Block Edge Cases
+
+### Code Block with Triple Backticks Inside
+
+````
+```
+Code with backticks
+```
+````
+
+### Code Block with Language and Extra Text
+
+```javascript this is extra text
+console.log("test");
+```
+
+### Empty Code Block with Language
+
+```javascript
+```
+
+## Table Edge Cases
+
+### Table with Missing Cells
+
+| A | B | C |
+|---|---|---|
+| 1 | 2 |
+| 3 |
+| 4 | 5 | 6 |
+
+### Table with Extra Cells
+
+| A | B |
+|---|---|
+| 1 | 2 | 3 | 4 |
+
+### Misaligned Table
+
+| A | B | C |
+|---|
+| 1 | 2 | 3 |
+
+### Table with No Header
+
+|---|---|---|
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
+
+## Horizontal Rule Variations
+
+***
+* * *
+*****
+- - -
+-------
+___
+_ _ _
+_______
+
+Mixed:
+* - *
+- * -
+
+## Escaping Edge Cases
+
+### Escaped Escapes
+
+\\**not bold\\**
+
+\\*not italic\\*
+
+### Partially Escaped
+
+\**half bold**
+
+*\*half italic*
+
+## HTML Edge Cases
+
+### Unclosed HTML Tags
+
+<div>
+<span>
+<p>
+
+### Invalid HTML
+
+<notarealtag>content</notarealtag>
+
+<div style="invalid css: !!;">content</div>
+
+### Mixed Case HTML
+
+<DIV>Capital div</DIV>
+
+<SpAn>Mixed case span</SpAn>
+
+## Reference Link Edge Cases
+
+### Undefined Reference
+
+[Undefined reference][nonexistent]
+
+### Duplicate References
+
+[Link1][ref]
+[Link2][ref]
+
+[ref]: https://example.com
+
+### Reference with No Definition
+
+[Link][ref-with-no-def]
+
+## Character Encoding
+
+### Different Quotes
+
+"Double quotes"
+'Single quotes'
+"Curly double quotes"
+'Curly single quotes'
+„German quotes"
+«French quotes»
+
+### Dashes and Hyphens
+
+Hyphen: -
+En dash: –
+Em dash: —
+Minus: −
+
+### Mathematical Symbols
+
+≠ ≤ ≥ ± × ÷ √ ∞ ∑ ∏ ∫
+
+### Currency Symbols
+
+$ € £ ¥ ₹ ₽ ₩ ₪ ₦
+
+## Performance Stress Tests
+
+### Many Paragraphs
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+
+Nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate velit.
+
+Esse cillum dolore eu fugiat nulla pariatur.
+
+Excepteur sint occaecat cupidatat non proident.
+
+Sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Many Links
+
+[Link1](url) [Link2](url) [Link3](url) [Link4](url) [Link5](url) [Link6](url) [Link7](url) [Link8](url) [Link9](url) [Link10](url) [Link11](url) [Link12](url) [Link13](url) [Link14](url) [Link15](url) [Link16](url) [Link17](url) [Link18](url) [Link19](url) [Link20](url)
+
+### Many Images
+
+![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50) ![](https://placehold.co/50)
+
+## Corner Cases
+
+### Just a Header
+
+# Nothing Else
+
+### Just a List
+
+* Only
+* A
+* List
+
+### Just a Table
+
+| A | B |
+|---|---|
+| 1 | 2 |
+
+### Just Code
+
+```
+Only code here
+```
+
+### Just a Quote
+
+> Only a quote
 
 ---
 
-**Note**: Not all HTML elements work in all markdown renderers. Some may be sanitized for security reasons.
+**Note**: Many of these edge cases may cause unexpected behavior or errors in markdown renderers. They are intentionally included to test robustness and error handling.
