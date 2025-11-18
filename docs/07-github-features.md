@@ -429,7 +429,7 @@ Press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> on Mac
 
 ### Uploaded Images
 
-![GitHub uploaded image](https://github.com/user-attachments/assets/example.png)
+![GitHub uploaded image](https://github.com/PLAZMAMA/docs-test-repo/blob/main/docs/images/sample-screenshot.png)
 
 ---
 
