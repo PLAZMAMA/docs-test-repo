@@ -113,11 +113,11 @@ Here's a grid of images:
 
 ### Different Image Formats (URLs)
 
-**JPEG**: ![JPEG](https://placehold.co/250x150.jpg/8bc34a/ffffff?text=JPEG)
+**JPEG**: ![JPEG](https://placehold.co/250x150/8bc34a/ffffff.jpeg?text=JPEG)
 
-**PNG**: ![PNG](https://placehold.co/250x150.png/cddc39/ffffff?text=PNG)
+**PNG**: ![PNG](https://placehold.co/250x150/cddc39/ffffff.png?text=PNG)
 
-**WebP**: ![WebP](https://placehold.co/250x150.webp/ffeb3b/ffffff?text=WebP)
+**WebP**: ![WebP](https://placehold.co/250x150/ffeb3b/ffffff.webp?text=WebP)
 
 ## Animated Images
 
