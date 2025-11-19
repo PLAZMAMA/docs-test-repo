@@ -6,54 +6,54 @@ This document demonstrates features specific to GitHub-Flavored Markdown (GFM).
 
 ### Basic Task Lists
 
-- [x] Completed task
-- [x] Another completed task
-- [ ] Uncompleted task
-- [ ] Another uncompleted task
+* [x] Completed task
+* [x] Another completed task
+* [ ] Uncompleted task
+* [ ] Another uncompleted task
 
 ### Nested Task Lists
 
-- [x] Main task completed
-  - [x] Subtask 1 completed
-  - [x] Subtask 2 completed
-  - [ ] Subtask 3 pending
-- [ ] Another main task
-  - [ ] Subtask A
-  - [ ] Subtask B
+* [x] Main task completed
+  * [x] Subtask 1 completed
+  * [x] Subtask 2 completed
+  * [ ] Subtask 3 pending
+* [ ] Another main task
+  * [ ] Subtask A
+  * [ ] Subtask B
 
 ### Task Lists with Descriptions
 
-- [x] **Setup project** - Initialize repository and configuration
-- [x] **Install dependencies** - Run npm install or yarn install
-- [ ] **Write tests** - Add unit and integration tests
-- [ ] **Documentation** - Update README and docs
-- [ ] **Deployment** - Deploy to production
+* [x] **Setup project** - Initialize repository and configuration
+* [x] **Install dependencies** - Run npm install or yarn install
+* [ ] **Write tests** - Add unit and integration tests
+* [ ] **Documentation** - Update README and docs
+* [ ] **Deployment** - Deploy to production
 
 ## Emoji
 
 ### Smileys and Emotion
 
-:smile: :laughing: :blush: :heart_eyes: :kissing_heart:
+:smile: :laughing: :blush: :heart\_eyes: :kissing\_heart:
 
-:relaxed: :satisfied: :grin: :wink: :stuck_out_tongue_winking_eye:
+:relaxed: :satisfied: :grin: :wink: :stuck\_out\_tongue\_winking\_eye:
 
 :sleeping: :worried: :frowning: :anguished: :cry:
 
 ### People and Body
 
-:+1: :-1: :ok_hand: :punch: :fist: :v: :wave: :raised_hand: :muscle:
+:thumbsup: :thumbsdown: :ok\_hand: :punch: :fist: :v: :wave: :raised\_hand: :muscle:
 
-:pray: :point_up: :point_down: :point_left: :point_right:
+:pray: :point\_up: :point\_down: :point\_left: :point\_right:
 
 ### Animals and Nature
 
-:dog: :cat: :mouse: :rabbit: :bear: :panda_face: :tiger:
+:dog: :cat: :mouse: :rabbit: :bear: :panda\_face: :tiger:
 
-:monkey: :see_no_evil: :hear_no_evil: :speak_no_evil:
+:monkey: :see\_no\_evil: :hear\_no\_evil: :speak\_no\_evil:
 
 :horse: :unicorn: :bee: :bug: :snail: :turtle:
 
-:deciduous_tree: :evergreen_tree: :palm_tree: :cactus: :tulip: :rose: :sunflower:
+:deciduous\_tree: :evergreen\_tree: :palm\_tree: :cactus: :tulip: :rose: :sunflower:
 
 :sunny: :cloud: :umbrella: :snowflake: :zap: :fire: :droplet:
 
@@ -63,29 +63,29 @@ This document demonstrates features specific to GitHub-Flavored Markdown (GFM).
 
 :pizza: :hamburger: :fries: :hotdog: :taco: :burrito: :sushi:
 
-:coffee: :tea: :beer: :wine_glass: :cocktail: :cake: :birthday:
+:coffee: :tea: :beer: :wine\_glass: :cocktail: :cake: :birthday:
 
 ### Activities and Objects
 
 :soccer: :basketball: :football: :baseball: :tennis: :8ball:
 
-:trophy: :medal_sports: :1st_place_medal: :2nd_place_medal: :3rd_place_medal:
+:trophy: :medal\_sports: :1st\_place\_medal: :2nd\_place\_medal: :3rd\_place\_medal:
 
 :art: :book: :books: :notebook: :pencil2: :pen: :paintbrush:
 
-:computer: :keyboard: :phone: :email: :calling: :camera: :video_camera:
+:computer: :keyboard: :phone: :email: :calling: :camera: :video\_camera:
 
 ### Symbols
 
-:heart: :yellow_heart: :green_heart: :blue_heart: :purple_heart:
+:heart: :yellow\_heart: :green\_heart: :blue\_heart: :purple\_heart:
 
 :star: :star2: :sparkles: :boom: :fire: :zap: :bulb:
 
-:white_check_mark: :x: :heavy_check_mark: :heavy_multiplication_x:
+:white\_check\_mark: :x: :heavy\_check\_mark: :heavy\_multiplication\_x:
 
-:arrow_right: :arrow_left: :arrow_up: :arrow_down:
+:arrow\_right: :arrow\_left: :arrow\_up: :arrow\_down:
 
-:warning: :no_entry: :question: :exclamation: :heavy_plus_sign: :heavy_minus_sign:
+:warning: :no\_entry: :question: :exclamation: :heavy\_plus\_sign: :heavy\_minus\_sign:
 
 ### Flags
 
@@ -121,7 +121,7 @@ www.github.com
 
 ### Issues and PRs
 
-#1 #42 #999
+\#1 #42 #999
 
 GH-1 GH-42 GH-999
 
@@ -150,23 +150,23 @@ This is ~~old information~~ updated information.
 ### Standard Table
 
 | Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
+| -------- | -------- | -------- |
 | Cell 1   | Cell 2   | Cell 3   |
 | Cell 4   | Cell 5   | Cell 6   |
 
 ### Table Without Leading/Trailing Pipes
 
-Column 1 | Column 2 | Column 3
----------|----------|----------
-Data 1   | Data 2   | Data 3
-Data 4   | Data 5   | Data 6
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| Data 1   | Data 2   | Data 3   |
+| Data 4   | Data 5   | Data 6   |
 
 ### Compact Table
 
-|A|B|C|
-|-|-|-|
-|1|2|3|
-|4|5|6|
+| A | B | C |
+| - | - | - |
+| 1 | 2 | 3 |
+| 4 | 5 | 6 |
 
 ## Syntax Highlighting
 
@@ -197,23 +197,17 @@ end
 
 ## Footnotes
 
-Here's a sentence with a footnote.[^1]
+Here's a sentence with a footnote.
 
-Another sentence with another footnote.[^note]
+Another sentence with another footnote.
 
-You can also use inline footnotes^[Like this one].
-
-[^1]: This is the first footnote.
-[^note]: This is a named footnote.
+You can also use inline footnotes^\[Like this one].
 
 ## Definition Lists (Some GFM renderers)
 
-Term 1
-: Definition for term 1
+Term 1 : Definition for term 1
 
-Term 2
-: Definition for term 2
-: Another definition for term 2
+Term 2 : Definition for term 2 : Another definition for term 2
 
 ## Autolinked References
 
@@ -225,20 +219,18 @@ Term 2
 
 ### Issue References
 
-#1
-#42
-#999
+\#1 #42 #999
 
 ### User References
 
-@octocat
-@github
+@octocat @github
 
 ## Diagrams (Mermaid)
 
 ### Flowchart
 
 ```mermaid
+
 graph TD;
     A[Start] --> B{Is it working?};
     B -->|Yes| C[Great!];
@@ -311,32 +303,28 @@ pie title Project Time Distribution
 
 ### Note
 
-> [!NOTE]
-> Highlights information that users should take into account.
+> \[!NOTE] Highlights information that users should take into account.
 
 ### Tip
 
-> [!TIP]
-> Optional information to help a user be more successful.
+> \[!TIP] Optional information to help a user be more successful.
 
 ### Important
 
-> [!IMPORTANT]
-> Crucial information necessary for users to succeed.
+> \[!IMPORTANT] Crucial information necessary for users to succeed.
 
 ### Warning
 
-> [!WARNING]
-> Critical content demanding immediate user attention due to potential risks.
+> \[!WARNING] Critical content demanding immediate user attention due to potential risks.
 
 ### Caution
 
-> [!CAUTION]
-> Negative potential consequences of an action.
+> \[!CAUTION] Negative potential consequences of an action.
 
 ## Collapsed Sections
 
 <details>
+
 <summary>Click to expand code example</summary>
 
 ```javascript
@@ -350,27 +338,28 @@ function complexFunction() {
 </details>
 
 <details>
+
 <summary>System Requirements</summary>
 
-### Minimum Requirements
+#### Minimum Requirements
 
-- OS: Windows 10 / macOS 10.15 / Linux
-- RAM: 8GB
-- Storage: 256GB SSD
-- Processor: Intel i5 or equivalent
+* OS: Windows 10 / macOS 10.15 / Linux
+* RAM: 8GB
+* Storage: 256GB SSD
+* Processor: Intel i5 or equivalent
 
-### Recommended Requirements
+#### Recommended Requirements
 
-- OS: Latest version
-- RAM: 16GB or more
-- Storage: 512GB SSD or larger
-- Processor: Intel i7 or better
+* OS: Latest version
+* RAM: 16GB or more
+* Storage: 512GB SSD or larger
+* Processor: Intel i7 or better
 
 </details>
 
 ## Color Chips
 
-`#0969DA` `#1f883d` `#A371F7` 
+`#0969DA` `#1f883d` `#A371F7`
 
 Background: `rgb(9, 105, 218)` `rgb(31, 136, 61)` `rgb(163, 113, 247)`
 
@@ -423,14 +412,14 @@ Press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> on Mac
 
 ### Relative Links
 
-[Link to another doc](./01-tables.md)
+[Link to another doc](01-tables.md)
 
-[Link to specific section](./02-images.md#basic-image-syntax)
+[Link to specific section](02-images.md#basic-image-syntax)
 
 ### Uploaded Images
 
-![GitHub uploaded image](https://github.com/PLAZMAMA/docs-test-repo/blob/main/docs/images/sample-screenshot.png)
+![GitHub uploaded image](images/sample-screenshot.png)
 
----
+***
 
 **Note**: Some features may only work on GitHub's platform or with specific markdown renderers that support GitHub-Flavored Markdown.
